@@ -12,6 +12,8 @@ target 'testApp' do
 
   if !ENV['CI']
     use_flipper!({ 'Flipper' => '0.80.0' })
+    pod 'react-native-config', :path => '../node_modules/react-native-config'
+
     post_install do |installer|
       flipper_post_install(installer)
     end
